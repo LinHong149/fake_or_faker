@@ -1,4 +1,3 @@
-headline,is_real,explanation
 "NASA confirms Earth has two moons",false,"NASA never made this claim—it's a misinterpretation of an article about quasi-satellites."
 "COVID-19 vaccines contain microchips for tracking",false,"This is a common conspiracy theory with no scientific basis."
 "Canada legalizes single-game sports betting",true,"This is a verified legislative update passed in 2021."
