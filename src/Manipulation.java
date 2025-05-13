@@ -1,5 +1,5 @@
 import java.util.Random;
-class Manipulate extends Lesson {
+class Manipulation extends Lesson {
     static String[] manipulating = {
         "True information under a false title",
         "Out of context quotations",
