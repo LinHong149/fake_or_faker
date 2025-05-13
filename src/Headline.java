@@ -17,16 +17,26 @@ public class Headline {
     private boolean isTrue;
     private int index;
     public static ArrayList<Integer> visited = new ArrayList<>();
-    private static final String fileName = "database.txt";
+    private static final String FILENAME = "database.txt";
+    private static final Random RANDOM = new Random();
     
 
     public Headline() {
-        // rng the index
+        // find number of lines
+        int totalLines = countLines();
         
+        // rng the index
+        do {
+            index = RANDOM.nextInt(totalLines); 
+        } while (visited.contains(index));
+        visited.add(index); 
+        
+        // set obj index as rng index
         this.index = index;
         
+        // get the text, explanation, and isTrue from file index
         try{
-            Scanner file = new Scanner(new File(fileName));
+            Scanner file = new Scanner(new File(FILENAME));
             int count = 1;
             while (file.hasNext()){
                 String[] line = file.nextLine().split(",");
@@ -52,11 +62,25 @@ public class Headline {
         return explanation; 
     }
     
-    public boolean getIsReal(){
+    public boolean getIsTrue(){
         return isTrue;
     }
     
     public static ArrayList<Integer> getVisited(){
         return visited;
+    }
+    
+    public static int countLines(){
+        int counter = 0;
+        try{
+            Scanner file = new Scanner(new File(FILENAME));
+            while(file.hasNext()){
+                counter++;
+            }
+        } catch(IOException e){
+            System.out.println("Error: "+e);
+        }
+        return counter;
+        
     }
 }
