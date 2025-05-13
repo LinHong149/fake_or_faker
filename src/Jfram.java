@@ -278,10 +278,11 @@ public class Jfram extends javax.swing.JFrame {
         explanation = headline.getExplanation();
        
         jTextField1.setText(text);
+        jTextArea2.setText("");
     }
    
     public void checkQuestion(boolean res){
-        if (res = isTrue){
+        if (res == isTrue){
             jTextArea2.setText("Correct! " + explanation);
         } else{
             jTextArea2.setText(explanation);
