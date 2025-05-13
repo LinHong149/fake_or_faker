@@ -23,16 +23,16 @@ public class Headline {
 
     public Headline() {
         // find number of lines
-        int totalLines = countLines();
-        
-        // rng the index
-        do {
-            index = RANDOM.nextInt(totalLines); 
-        } while (visited.contains(index));
-        visited.add(index); 
-        
+//        int totalLines = countLines();
+//        
+//        // rng the index
+//        do {
+//            index = RANDOM.nextInt(totalLines)+1; 
+//        } while (visited.contains(index));
+//        visited.add(index); 
+//        
         // set obj index as rng index
-        this.index = index;
+        this.index = 1;
         
         // get the text, explanation, and isTrue from file index
         try{

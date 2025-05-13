@@ -8,7 +8,10 @@
  * @author 350326790
  */
 public class Jfram extends javax.swing.JFrame {
-
+    private String text;
+    private String explanation;
+    private boolean isTrue;
+    
     /**
      * Creates new form Jfram
      */
@@ -58,6 +61,7 @@ public class Jfram extends javax.swing.JFrame {
         javax.swing.JButton NextButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         lessonArea = new javax.swing.JTextPane();
+        jToggleButton3 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,7 +82,8 @@ public class Jfram extends javax.swing.JFrame {
         });
 
         jToggleButton2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jToggleButton2.setText("Fake");
+        jToggleButton2.setText("Next");
+        jToggleButton2.setToolTipText("");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
@@ -131,6 +136,14 @@ public class Jfram extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(lessonArea);
 
+        jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jToggleButton3.setText("Fake");
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,10 +157,12 @@ public class Jfram extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(61, 61, 61)
+                                                .addGap(41, 41, 41)
+                                                .addComponent(jToggleButton3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jToggleButton2))
                                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel4))
@@ -191,7 +206,8 @@ public class Jfram extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton2)
-                    .addComponent(jToggleButton1))
+                    .addComponent(jToggleButton1)
+                    .addComponent(jToggleButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -216,11 +232,11 @@ public class Jfram extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        checkQuestion(true);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
+        nextQuestion();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -248,6 +264,30 @@ public class Jfram extends javax.swing.JFrame {
         lessonArea.setText(lesson.getRandomRecord());
     }//GEN-LAST:event_NextButtonActionPerformed
 
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        checkQuestion(false);
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    
+      public void nextQuestion(){
+        Headline headline = new Headline();
+        System.out.println(headline.getText());
+       
+        text = headline.getText();
+        isTrue = headline.getIsTrue();
+        explanation = headline.getExplanation();
+       
+        jTextField1.setText(text);
+    }
+   
+    public void checkQuestion(boolean res){
+        if (res = isTrue){
+            jTextArea2.setText("Correct! " + explanation);
+        } else{
+            jTextArea2.setText(explanation);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -297,6 +337,7 @@ public class Jfram extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JTextPane lessonArea;
     private javax.swing.JRadioButton mani;
     private javax.swing.JRadioButton media;
