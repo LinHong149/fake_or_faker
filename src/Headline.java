@@ -27,7 +27,7 @@ public class Headline {
 //        
 //        // rng the index
 //        do {
-//            index = RANDOM.nextInt(totalLines)+1; 
+//            index = RANDOM.nextInt(totalLines); 
 //        } while (visited.contains(index));
 //        visited.add(index); 
 //        
@@ -37,7 +37,7 @@ public class Headline {
         // get the text, explanation, and isTrue from file index
         try{
             Scanner file = new Scanner(new File(FILENAME));
-            int count = 1;
+            int count = 0;
             while (file.hasNext()){
                 String[] line = file.nextLine().split(",");
                 if (index == count){
