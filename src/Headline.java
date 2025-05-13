@@ -23,16 +23,16 @@ public class Headline {
 
     public Headline() {
         // find number of lines
-//        int totalLines = countLines();
-//        
-//        // rng the index
-//        do {
-//            index = RANDOM.nextInt(totalLines); 
-//        } while (visited.contains(index));
-//        visited.add(index); 
-//        
+        int totalLines = countLines();
+        
+        // rng the index
+        do {
+            index = RANDOM.nextInt(totalLines); 
+        } while (visited.contains(index));
+        visited.add(index); 
+        
         // set obj index as rng index
-        this.index = 1;
+        this.index = index;
         
         // get the text, explanation, and isTrue from file index
         try{
@@ -75,6 +75,7 @@ public class Headline {
         try{
             Scanner file = new Scanner(new File(FILENAME));
             while(file.hasNext()){
+                file.nextLine();
                 counter++;
             }
         } catch(IOException e){
