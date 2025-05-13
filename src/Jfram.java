@@ -282,6 +282,8 @@ public class Jfram extends javax.swing.JFrame {
     }
    
     public void checkQuestion(boolean res){
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setWrapStyleWord(true);
         if (res == isTrue){
             jTextArea2.setText("Correct! " + explanation);
         } else{

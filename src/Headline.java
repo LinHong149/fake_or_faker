@@ -39,7 +39,7 @@ public class Headline {
             Scanner file = new Scanner(new File(FILENAME));
             int count = 0;
             while (file.hasNext()){
-                String[] line = file.nextLine().split(",");
+                String[] line = file.nextLine().split("\\|");
                 if (index == count){
                     this.text = line[0];
                     this.isTrue = Boolean.parseBoolean(line[1]);

@@ -1,30 +1,30 @@
-NASA confirms Earth has two moons,false,NASA never made this claim—it's a misinterpretation of an article about quasi-satellites.
-COVID-19 vaccines contain microchips for tracking,false,This is a common conspiracy theory with no scientific basis.
-Canada legalizes single-game sports betting,true,This is a verified legislative update passed in 2021.
-Drinking bleach cures coronavirus,false,This is dangerous misinformation—health organizations warn against it.
-WHO declares climate change the biggest health threat of the century,true,This is based on a real WHO report.
-Facebook is charging users $5/month to use Messenger,false,There has been no official announcement—this is a recurring hoax.
-NASA is sending a woman to the Moon by 2025,true,This is part of NASA’s Artemis program.
-Bill Gates owns the majority of U.S. farmland,false,He owns a large amount but not a majority—this claim is exaggerated.
-Scientists discover a cure for cancer,false,No universal cure exists; this is a misleading overgeneralization.
-Amazon to open walk-in clinics across the U.S.,true,Amazon has launched health clinics as part of its healthcare expansion.
-5G towers spread COVID-19,false,This is a debunked conspiracy theory with no scientific evidence.
-Scientists create plastic-eating enzyme,true,This is based on real research aiming to reduce plastic pollution.
-Pope endorses a specific political candidate,false,The Vatican does not officially endorse political candidates.
-Electric vehicles are more prone to catching fire,false,Statistically, EVs catch fire less often than gasoline vehicles.
-Apple developing foldable iPhone,true,Multiple tech outlets have reported Apple is prototyping foldable designs.
-Chocolate milk comes from brown cows,false,This myth is surprisingly believed by some, but it's entirely false.
-Paris bans rental e-scooters,true,In 2023, Paris became the first European capital to ban shared e-scooters after a referendum.
-Drinking water can prevent all types of cancer,false,While hydration is important, there's no evidence it prevents all cancers.
-Japan develops fully automated robot chefs,true,Several companies have released prototype robot chefs for commercial use.
-Vaccines cause autism,false,This claim has been repeatedly debunked by medical research and global health agencies.
-NASA plants trees on the Moon,false,No trees have been planted on the Moon—current missions focus on equipment and research.
-Octopuses have three hearts and blue blood,true,This is scientifically accurate—two pump blood to the gills, one to the body.
-McDonald's to replace all meat with lab-grown alternatives,false,McDonald's has explored alternatives but hasn’t announced full replacement.
-A new continent is forming in the Indian Ocean,true,Geologists have observed tectonic activity suggesting long-term continental shifts.
-Reading in dim light damages your eyesight permanently,false,This is a myth—your eyes may strain, but there's no permanent damage.
-Venus rotates backwards compared to most planets,true,Venus spins in the opposite direction (retrograde rotation) compared to Earth.
-Drinking lemon water every morning detoxes your liver,false,While lemon water is hydrating, it doesn't have a detox effect on the liver.
-Google Maps accidentally revealed a top-secret military base,true,In several past cases, satellite imagery has exposed classified locations.
-Humans only use 10% of their brain,false,This is a popular myth—brain scans show activity across nearly all areas even at rest.
-Bananas are berries but strawberries aren't,true,Botanically, bananas fit the berry definition while strawberries do not.
+NASA confirms Earth has two moons|false|NASA never made this claim—it's a misinterpretation of an article about quasi-satellites.
+COVID-19 vaccines contain microchips for tracking|false|This is a common conspiracy theory with no scientific basis.
+Canada legalizes single-game sports betting|true|This is a verified legislative update passed in 2021.
+Drinking bleach cures coronavirus|false|This is dangerous misinformation—health organizations warn against it.
+WHO declares climate change the biggest health threat of the century|true|This is based on a real WHO report.
+Facebook is charging users $5/month to use Messenger|false|There has been no official announcement—this is a recurring hoax.
+NASA is sending a woman to the Moon by 2025|true|This is part of NASA’s Artemis program.
+Bill Gates owns the majority of U.S. farmland|false|He owns a large amount but not a majority—this claim is exaggerated.
+Scientists discover a cure for cancer|false|No universal cure exists; this is a misleading overgeneralization.
+Amazon to open walk-in clinics across the U.S.|true|Amazon has launched health clinics as part of its healthcare expansion.
+5G towers spread COVID-19|false|This is a debunked conspiracy theory with no scientific evidence.
+Scientists create plastic-eating enzyme|true|This is based on real research aiming to reduce plastic pollution.
+Pope endorses a specific political candidate|false|The Vatican does not officially endorse political candidates.
+Electric vehicles are more prone to catching fire|false|Statistically, EVs catch fire less often than gasoline vehicles.
+Apple developing foldable iPhone|true|Multiple tech outlets have reported Apple is prototyping foldable designs.
+Chocolate milk comes from brown cows|false|This myth is surprisingly believed by some, but it's entirely false.
+Paris bans rental e-scooters|true|In 2023, Paris became the first European capital to ban shared e-scooters after a referendum.
+Drinking water can prevent all types of cancer|false|While hydration is important, there's no evidence it prevents all cancers.
+Japan develops fully automated robot chefs|true|Several companies have released prototype robot chefs for commercial use.
+Vaccines cause autism|false|This claim has been repeatedly debunked by medical research and global health agencies.
+NASA plants trees on the Moon|false|No trees have been planted on the Moon—current missions focus on equipment and research.
+Octopuses have three hearts and blue blood|true|This is scientifically accurate—two pump blood to the gills, one to the body.
+McDonald's to replace all meat with lab-grown alternatives|false|McDonald's has explored alternatives but hasn’t announced full replacement.
+A new continent is forming in the Indian Ocean|true|Geologists have observed tectonic activity suggesting long-term continental shifts.
+Reading in dim light damages your eyesight permanently|false|This is a myth—your eyes may strain, but there's no permanent damage.
+Venus rotates backwards compared to most planets|true|Venus spins in the opposite direction (retrograde rotation) compared to Earth.
+Drinking lemon water every morning detoxes your liver|false|While lemon water is hydrating, it doesn't have a detox effect on the liver.
+Google Maps accidentally revealed a top-secret military base|true|In several past cases, satellite imagery has exposed classified locations.
+Humans only use 10% of their brain|false|This is a popular myth—brain scans show activity across nearly all areas even at rest.
+Bananas are berries but strawberries aren't|true|Botanically, bananas fit the berry definition while strawberries do not.
