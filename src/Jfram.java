@@ -11,6 +11,8 @@ public class Jfram extends javax.swing.JFrame {
     private String text;
     private String explanation;
     private boolean isTrue;
+    private redFlagQuiz quiz = new redFlagQuiz();
+    private int debounce = 0;
     
     /**
      * Creates new form Jfram
@@ -54,7 +56,6 @@ public class Jfram extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         mani = new javax.swing.JRadioButton();
         media = new javax.swing.JRadioButton();
         info = new javax.swing.JRadioButton();
@@ -62,6 +63,16 @@ public class Jfram extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         lessonArea = new javax.swing.JTextPane();
         jToggleButton3 = new javax.swing.JToggleButton();
+        jLabel5 = new javax.swing.JLabel();
+        tfTrue = new javax.swing.JButton();
+        tfFalse = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tfFeed = new javax.swing.JTextArea();
+        tfNext = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tfquestion = new javax.swing.JTextArea();
+        score = new javax.swing.JLabel();
+        streak = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,9 +116,6 @@ public class Jfram extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Red Flags of Fake News");
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jTextField2.setText("jTextField2");
-
         buttonGroup1.add(mani);
         mani.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mani.setText("Manipulation");
@@ -144,63 +152,119 @@ public class Jfram extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("Red Flag Quiz");
+
+        tfTrue.setText("True");
+        tfTrue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTrueActionPerformed(evt);
+            }
+        });
+
+        tfFalse.setText("False");
+        tfFalse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFalseActionPerformed(evt);
+            }
+        });
+
+        tfFeed.setColumns(20);
+        tfFeed.setLineWrap(true);
+        tfFeed.setRows(5);
+        tfFeed.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(tfFeed);
+
+        tfNext.setText("Next");
+        tfNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNextActionPerformed(evt);
+            }
+        });
+
+        tfquestion.setColumns(20);
+        tfquestion.setLineWrap(true);
+        tfquestion.setRows(5);
+        tfquestion.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(tfquestion);
+
+        score.setText("Score:");
+
+        streak.setText("Highest Streak:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mani)
+                            .addComponent(media)
+                            .addComponent(info)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(41, 41, 41)
+                                .addComponent(jToggleButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jToggleButton2))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)))
+                .addGap(703, 703, 703))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addComponent(NextButton))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane4)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(41, 41, 41)
-                                                .addComponent(jToggleButton3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jToggleButton2))
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel4))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(info)
-                                            .addComponent(mani)
-                                            .addComponent(media)))))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(701, Short.MAX_VALUE))
+                                .addGap(14, 14, 14)
+                                .addComponent(score, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(streak, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 619, Short.MAX_VALUE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(237, 237, 237))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(NextButton)
+                        .addContainerGap()
+                        .addComponent(tfTrue)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfFalse)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfNext)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -225,7 +289,26 @@ public class Jfram extends javax.swing.JFrame {
                         .addComponent(media)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NextButton)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(score))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(streak)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfTrue)
+                    .addComponent(tfFalse)
+                    .addComponent(tfNext))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         pack();
@@ -267,6 +350,55 @@ public class Jfram extends javax.swing.JFrame {
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         checkQuestion(false);
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void tfNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNextActionPerformed
+        // TODO add your handling code here:
+        tfFeed.setText("");
+        debounce = 0;
+        quiz.getCurrQuestion().setStuff();
+        tfquestion.setText(quiz.getCurrQuestion().question);
+        
+        
+    }//GEN-LAST:event_tfNextActionPerformed
+
+    private void tfTrueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTrueActionPerformed
+        // TODO add your handling code here:
+        if (debounce == 0) {
+            if (quiz.getCurrQuestion().correct("True")){
+                tfFeed.setText("Correct");
+                quiz.addscore();
+                quiz.addstreak();
+                score.setText("Score: "+Integer.toString(quiz.getscore()));
+                streak.setText("Highest Streak: "+Integer.toString(quiz.getstreak()));
+            } else {
+                tfFeed.setText(quiz.getCurrQuestion().feedback);
+                quiz.resetscore();
+                score.setText("Score: "+Integer.toString(quiz.getscore()));
+                
+            }
+            debounce = 1;
+        }
+        
+    }//GEN-LAST:event_tfTrueActionPerformed
+
+    private void tfFalseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFalseActionPerformed
+        // TODO add your handling code here:
+        if (debounce == 0){
+            if (quiz.getCurrQuestion().correct("False")){
+                tfFeed.setText("Correct");
+                quiz.addscore();
+                quiz.addstreak();
+                score.setText("Score: "+Integer.toString(quiz.getscore()));
+                streak.setText("Highest Streak: "+Integer.toString(quiz.getstreak()));
+            } else {
+                tfFeed.setText(quiz.getCurrQuestion().feedback);
+                quiz.resetscore();
+                score.setText("Score: "+Integer.toString(quiz.getscore()));
+            }
+            debounce = 1;
+        }
+        
+    }//GEN-LAST:event_tfFalseActionPerformed
 
     
       public void nextQuestion(){
@@ -333,16 +465,25 @@ public class Jfram extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JTextPane lessonArea;
     private javax.swing.JRadioButton mani;
     private javax.swing.JRadioButton media;
+    private javax.swing.JLabel score;
+    private javax.swing.JLabel streak;
+    private javax.swing.JButton tfFalse;
+    private javax.swing.JTextArea tfFeed;
+    private javax.swing.JButton tfNext;
+    private javax.swing.JButton tfTrue;
+    private javax.swing.JTextArea tfquestion;
     // End of variables declaration//GEN-END:variables
 }
