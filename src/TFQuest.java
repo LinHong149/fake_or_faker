@@ -4,31 +4,48 @@
  */
 
 /**
- *
- * @author Jacob Zheng
+ * This class represents a True/False question.
+ * It includes the question text, the correct answer, and feedback for the user.
+ * Other classes (like randTFQuestion) can use or extend this class.
+ * 
+ * Author: Jacob Zheng
  */
 public class TFQuest {
-    protected String question;
-    protected String answer;
-    protected String feedback;
-   
-    public TFQuest (){}
     
-    public TFQuest(String question, String answer, String feedback){
+    // The question text
+    protected String question;
+
+    // The correct answer ("True" or "False")
+    protected String answer;
+
+    // Feedback or explanation related to the question
+    protected String feedback;
+
+    // Default constructor – creates an empty question
+    public TFQuest() {
+        this("","","");
+    }
+
+    // Constructor with parameters – creates a question with provided values
+    public TFQuest(String question, String answer, String feedback) {
         this.question = question;
-        this.answer= answer;
+        this.answer = answer;
         this.feedback = feedback;
     }
-    
-    public void setStuff(){
+
+    // A method to set default or placeholder values
+    public void setStuff() {
         this.question = "nothing";
         this.answer = "nothing";
         this.feedback = "nothing";
     }
-    
-    
-    public boolean correct(String userinput){
-       return userinput.equals(answer);
+
+    /**
+     * This method checks if the user's answer is correct.
+     * @param userinput The answer given by the user ("True" or "False")
+     * @return true if the answer is correct, false otherwise
+     */
+    public boolean correct(String userinput) {
+        return userinput.equals(answer);
     }
 }
-
