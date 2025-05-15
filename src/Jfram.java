@@ -271,7 +271,6 @@ public class Jfram extends javax.swing.JFrame {
     
       public void nextQuestion(){
         Headline headline = new Headline();
-        System.out.println(headline.getText());
        
         text = headline.getText();
         isTrue = headline.getIsTrue();
