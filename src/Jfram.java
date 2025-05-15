@@ -101,7 +101,8 @@ public class Jfram extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("Insert Headlines");
+        jTextField1.setEditable(false);
+        jTextField1.setText("Click Next");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -110,7 +111,7 @@ public class Jfram extends javax.swing.JFrame {
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
-        jTextArea2.setText("insert feedback here\n");
+        jTextArea2.setText("Click Real or Fake");
         jScrollPane2.setViewportView(jTextArea2);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -142,6 +143,7 @@ public class Jfram extends javax.swing.JFrame {
             }
         });
 
+        lessonArea.setText("Choose the topics on the right");
         jScrollPane3.setViewportView(lessonArea);
 
         jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
