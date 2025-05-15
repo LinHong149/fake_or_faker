@@ -2,6 +2,9 @@
  * This class represents a simple True/False quiz game.
  * It keeps track of the current question, the player's score, and their best streak.
  */
+
+import java.util.*;
+import java.io.*;
 public class redFlagQuiz {
 
     // Stores the current True/False question
@@ -76,5 +79,22 @@ public class redFlagQuiz {
      */
     public int getstreak() {
         return streak;
+    }
+    
+    public void write(String filename, String result){
+        try {
+            FileWriter write = new FileWriter(filename, true);
+            PrintWriter pwrite = new PrintWriter(write);
+            pwrite.println("Question: "+ questiongetter()+ " Result: "+ result + " Score: "+ this.score + " Streak:" + this.streak);
+            pwrite.close();
+            
+        } catch (IOException e){
+            System.err.println("failed to write ");
+        }
+        
+    }
+    
+    public String questiongetter(){
+        return currQuestion.getQuestion();
     }
 }

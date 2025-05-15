@@ -40,6 +40,9 @@ public class TFQuest {
         this.feedback = "nothing";
     }
 
+    public String getQuestion(){
+        return question;
+    }
     /**
      * This method checks if the user's answer is correct.
      * @param userinput The answer given by the user ("True" or "False")

@@ -361,7 +361,7 @@ public class Jfram extends javax.swing.JFrame {
 
     private void tfTrueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTrueActionPerformed
         // TODO add your handling code here:
-
+        String tfWrite;
         // Check if debounce is 0 (to prevent multiple submissions in quick succession)
         if (debounce == 0) {
 
@@ -376,6 +376,7 @@ public class Jfram extends javax.swing.JFrame {
                 // Update the score and streak on the UI
                 score.setText("Score: " + Integer.toString(quiz.getscore()));
                 streak.setText("Highest Streak: " + Integer.toString(quiz.getstreak()));
+                tfWrite = "Correct";
 
             } else {
                 // If the answer is incorrect
@@ -384,16 +385,18 @@ public class Jfram extends javax.swing.JFrame {
 
                 // Update the score on the UI (which is now 0 after reset)
                 score.setText("Score: " + Integer.toString(quiz.getscore()));
+                tfWrite = "Wrong";
             }
 
             // Set debounce to 1 to prevent multiple actions being triggered in quick succession
             debounce = 1;
+            quiz.write("redflagquizdata.txt", tfWrite);
         }
     }//GEN-LAST:event_tfTrueActionPerformed
 
     private void tfFalseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFalseActionPerformed
         // TODO add your handling code here:
-
+        String tfWrite;
         // Check if debounce is 0 (to ensure this block runs only once per action)
         if (debounce == 0) {
 
@@ -404,6 +407,7 @@ public class Jfram extends javax.swing.JFrame {
                 tfFeed.setText("Correct");   // Display "Correct" in the feedback field
                 quiz.addscore();             // Increment the score by 1
                 quiz.addstreak();            // Increment the streak (consecutive correct answers)
+                tfWrite = "Correct";
 
                 // Update the score and streak on the UI
                 score.setText("Score: " + Integer.toString(quiz.getscore()));
@@ -416,8 +420,10 @@ public class Jfram extends javax.swing.JFrame {
 
                 // Update the score on the UI (which is now 0 after reset)
                 score.setText("Score: " + Integer.toString(quiz.getscore()));
+                tfWrite = "Wrong";
             }
-
+            
+            quiz.write("redflagquizdata.txt", tfWrite);
             // Set debounce to 1 to prevent multiple actions from being triggered in quick succession
             debounce = 1;
         }
