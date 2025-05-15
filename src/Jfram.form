@@ -223,7 +223,8 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Insert Headlines"/>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="Click Next"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
@@ -240,7 +241,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="insert feedback here&#xa;"/>
+            <Property name="text" type="java.lang.String" value="Click Real or Fake"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -313,6 +314,9 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="lessonArea">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Choose the topics on the right"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
