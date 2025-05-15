@@ -333,96 +333,133 @@ public class Jfram extends javax.swing.JFrame {
     }//GEN-LAST:event_maniActionPerformed
 
     private void NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NextButtonActionPerformed
+        // Declare a variable 'lesson' to hold the selected lesson object
         Lesson lesson;
-        if (info.isSelected()){
+
+        // Check if a particular option (e.g., 'info') is selected
+        if (info.isSelected()) {
+            // If 'info' is selected, create an instance of FalseInfo (a subclass of Lesson)
             lesson = new FalseInfo();
         }
-        else if (mani.isSelected()){
+        // Check if 'mani' (likely referring to Manipulation) is selected
+        else if (mani.isSelected()) {
+            // If 'mani' is selected, create an instance of Manipulation (another subclass of Lesson)
             lesson = new Manipulation();
         }
-        else{
+        // If neither 'info' nor 'mani' is selected, default to Media
+        else {
+            // Create an instance of Media (another subclass of Lesson)
             lesson = new Media();
         }
-        
- 
-        // Print a random record from the selected lesson
+
+        // Set the text area (lessonArea) to display a random record from the selected lesson
         lessonArea.setText(lesson.getRandomRecord());
+
     }//GEN-LAST:event_NextButtonActionPerformed
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        checkQuestion(false);
+        checkQuestion(false); // This will print "Incorrect. Try again!"
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void tfNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNextActionPerformed
         // TODO add your handling code here:
-        tfFeed.setText("");
-        debounce = 0;
-        quiz.getCurrQuestion().setStuff();
-        tfquestion.setText(quiz.getCurrQuestion().question);
-        
-        
+        tfFeed.setText("");                // Clears the feedback field (sets it to an empty string)
+        debounce = 0;                      // Resets a variable (likely for debouncing or delay management)
+        quiz.getCurrQuestion().setStuff(); // Sets up the current question by calling setStuff() on the current question object
+        tfquestion.setText(quiz.getCurrQuestion().question); // Updates the UI with the new question text
     }//GEN-LAST:event_tfNextActionPerformed
 
     private void tfTrueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTrueActionPerformed
         // TODO add your handling code here:
+
+        // Check if debounce is 0 (to prevent multiple submissions in quick succession)
         if (debounce == 0) {
-            if (quiz.getCurrQuestion().correct("True")){
-                tfFeed.setText("Correct");
-                quiz.addscore();
-                quiz.addstreak();
-                score.setText("Score: "+Integer.toString(quiz.getscore()));
-                streak.setText("Highest Streak: "+Integer.toString(quiz.getstreak()));
+
+            // Check if the user's answer is correct by comparing it with "True"
+            if (quiz.getCurrQuestion().correct("True")) {
+
+                // If the answer is correct
+                tfFeed.setText("Correct");   // Display "Correct" in the feedback field
+                quiz.addscore();             // Increment the score by 1
+                quiz.addstreak();            // Increment the streak (i.e., consecutive correct answers)
+
+                // Update the score and streak on the UI
+                score.setText("Score: " + Integer.toString(quiz.getscore()));
+                streak.setText("Highest Streak: " + Integer.toString(quiz.getstreak()));
+
             } else {
-                tfFeed.setText(quiz.getCurrQuestion().feedback);
-                quiz.resetscore();
-                score.setText("Score: "+Integer.toString(quiz.getscore()));
-                
+                // If the answer is incorrect
+                tfFeed.setText(quiz.getCurrQuestion().feedback);  // Display the feedback from the current question
+                quiz.resetscore();  // Reset the score (i.e., the score goes back to 0)
+
+                // Update the score on the UI (which is now 0 after reset)
+                score.setText("Score: " + Integer.toString(quiz.getscore()));
             }
+
+            // Set debounce to 1 to prevent multiple actions being triggered in quick succession
             debounce = 1;
         }
-        
     }//GEN-LAST:event_tfTrueActionPerformed
 
     private void tfFalseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFalseActionPerformed
         // TODO add your handling code here:
-        if (debounce == 0){
-            if (quiz.getCurrQuestion().correct("False")){
-                tfFeed.setText("Correct");
-                quiz.addscore();
-                quiz.addstreak();
-                score.setText("Score: "+Integer.toString(quiz.getscore()));
-                streak.setText("Highest Streak: "+Integer.toString(quiz.getstreak()));
+
+        // Check if debounce is 0 (to ensure this block runs only once per action)
+        if (debounce == 0) {
+
+            // Check if the answer provided by the user is correct (answer is "False" in this case)
+            if (quiz.getCurrQuestion().correct("False")) {
+
+                // If the answer is correct
+                tfFeed.setText("Correct");   // Display "Correct" in the feedback field
+                quiz.addscore();             // Increment the score by 1
+                quiz.addstreak();            // Increment the streak (consecutive correct answers)
+
+                // Update the score and streak on the UI
+                score.setText("Score: " + Integer.toString(quiz.getscore()));
+                streak.setText("Highest Streak: " + Integer.toString(quiz.getstreak()));
+
             } else {
-                tfFeed.setText(quiz.getCurrQuestion().feedback);
-                quiz.resetscore();
-                score.setText("Score: "+Integer.toString(quiz.getscore()));
+                // If the answer is incorrect
+                tfFeed.setText(quiz.getCurrQuestion().feedback);  // Display the feedback related to the question
+                quiz.resetscore();  // Reset the score to 0 after a wrong answer
+
+                // Update the score on the UI (which is now 0 after reset)
+                score.setText("Score: " + Integer.toString(quiz.getscore()));
             }
+
+            // Set debounce to 1 to prevent multiple actions from being triggered in quick succession
             debounce = 1;
         }
-        
+
     }//GEN-LAST:event_tfFalseActionPerformed
 
-    
-      public void nextQuestion(){
-        Headline headline = new Headline();
-       
-        text = headline.getText();
-        isTrue = headline.getIsTrue();
-        explanation = headline.getExplanation();
-       
-        jTextField1.setText(text);
-        jTextArea2.setText("");
+
+    public void nextQuestion() {
+        Headline headline = new Headline();  // Create a new Headline object
+
+        // Get the data for the new question
+        text = headline.getText();  // The question text
+        isTrue = headline.getIsTrue();  // The true/false answer
+        explanation = headline.getExplanation();  // The explanation for the answer
+
+        // Set the question text in the JTextField and clear previous feedback
+        jTextField1.setText(text);  
+        jTextArea2.setText("");  // Clear the feedback area
     }
-   
-    public void checkQuestion(boolean res){
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setWrapStyleWord(true);
-        if (res == isTrue){
-            jTextArea2.setText("Correct! " + explanation);
-        } else{
-            jTextArea2.setText(explanation);
+
+    public void checkQuestion(boolean res) {
+        jTextArea2.setLineWrap(true);  // Enable text wrapping for feedback area
+        jTextArea2.setWrapStyleWord(true);  // Make sure text wraps at word boundaries
+
+        // Check if the user's answer is correct
+        if (res == isTrue) {
+            jTextArea2.setText("Correct! " + explanation);  // Show "Correct!" with explanation
+        } else {
+            jTextArea2.setText(explanation);  // Show explanation even if the answer is incorrect
         }
     }
+
     
     /**
      * @param args the command line arguments
