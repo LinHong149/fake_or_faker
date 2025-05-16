@@ -12,3 +12,6 @@ Question: Error in news reporting refers to intentional misinformation spread by
 Question: Propaganda is often used to influence public opinion by managing attitudes, values, and knowledge, typically with a specific agenda. Result: Correct Score: 6 Streak: 6
 Question: Fabricated Content refers to information that is completely true but presented in a misleading way. Result: Correct Score: 7 Streak: 7
 Question: Propaganda is often used to influence public opinion by managing attitudes, values, and knowledge, typically with a specific agenda. Result: Correct Score: 8 Streak: 8
+Question: Fake Videos are videos created with the intent to deceive, often using deepfake technology or other methods to manipulate reality. Result: Wrong Score: 0 Streak: 0
+Question: Propaganda is often used to influence public opinion by managing attitudes, values, and knowledge, typically with a specific agenda. Result: Correct Score: 1 Streak: 1
+Question: Sponsored Content is designed to be clearly identified as advertising and does not mislead the audience. Result: Wrong Score: 0 Streak: 1
