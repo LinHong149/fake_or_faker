@@ -50,8 +50,6 @@ public class Jfram extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
@@ -61,7 +59,6 @@ public class Jfram extends javax.swing.JFrame {
         javax.swing.JButton NextButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         lessonArea = new javax.swing.JTextPane();
-        jToggleButton3 = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
         tfTrue = new javax.swing.JButton();
         tfFalse = new javax.swing.JButton();
@@ -74,6 +71,9 @@ public class Jfram extends javax.swing.JFrame {
         streak = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         headlinebox = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
+        wdwd = new javax.swing.JButton();
+        wd = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,23 +84,6 @@ public class Jfram extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("News or Nonsense?");
-
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jToggleButton1.setText("Real");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jToggleButton2.setText("Next");
-        jToggleButton2.setToolTipText("");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -138,14 +121,6 @@ public class Jfram extends javax.swing.JFrame {
 
         lessonArea.setText("Choose the topics on the right");
         jScrollPane3.setViewportView(lessonArea);
-
-        jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jToggleButton3.setText("Fake");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Red Flag Quiz");
@@ -193,6 +168,30 @@ public class Jfram extends javax.swing.JFrame {
         headlinebox.setWrapStyleWord(true);
         jScrollPane5.setViewportView(headlinebox);
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setText("Next");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        wdwd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        wdwd.setText("Real");
+        wdwd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wdwdActionPerformed(evt);
+            }
+        });
+
+        wd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        wd.setText("Fake");
+        wd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wdActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -204,28 +203,34 @@ public class Jfram extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(mani)
-                                    .addComponent(media)
-                                    .addComponent(info)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(mani)
+                                            .addComponent(info))
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(media)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(84, 84, 84)
                                 .addComponent(NextButton))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(41, 41, 41)
-                                        .addComponent(jToggleButton3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jToggleButton2))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane5))
+                                        .addComponent(wdwd)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(wd)
+                                        .addGap(25, 25, 25)
+                                        .addComponent(jButton1))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane5)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
                                 .addGap(128, 128, 128)
@@ -284,10 +289,10 @@ public class Jfram extends javax.swing.JFrame {
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jToggleButton2)
-                                    .addComponent(jToggleButton1)
-                                    .addComponent(jToggleButton3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(wdwd)
+                                    .addComponent(wd)
+                                    .addComponent(jButton1))
+                                .addGap(9, 9, 9)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,14 +314,6 @@ public class Jfram extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        checkQuestion(true);
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        nextQuestion();
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void maniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maniActionPerformed
         // TODO add your handling code here:
@@ -346,10 +343,6 @@ public class Jfram extends javax.swing.JFrame {
         lessonArea.setText(lesson.getRandomRecord());
 
     }//GEN-LAST:event_NextButtonActionPerformed
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        checkQuestion(false); // This will print "Incorrect. Try again!"
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void tfNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNextActionPerformed
         // TODO add your handling code here:
@@ -430,6 +423,22 @@ public class Jfram extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tfFalseActionPerformed
 
+    private void wdwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wdwdActionPerformed
+        // TODO add your handling code here:
+        checkQuestion(true);
+    }//GEN-LAST:event_wdwdActionPerformed
+
+    private void wdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wdActionPerformed
+        // TODO add your handling code here:
+        checkQuestion(false); // This will print "Incorrect. Try again!"
+    }//GEN-LAST:event_wdActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        nextQuestion();   
+    }//GEN-LAST:event_jButton1ActionPerformed
+            
+  
 
     public void nextQuestion() {
         Headline headline = new Headline();  // Create a new Headline object
@@ -496,6 +505,7 @@ public class Jfram extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextArea headlinebox;
     private javax.swing.JRadioButton info;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -507,9 +517,6 @@ public class Jfram extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JTextPane lessonArea;
     private javax.swing.JRadioButton mani;
     private javax.swing.JRadioButton media;
@@ -520,5 +527,7 @@ public class Jfram extends javax.swing.JFrame {
     private javax.swing.JButton tfNext;
     private javax.swing.JButton tfTrue;
     private javax.swing.JTextArea tfquestion;
+    private javax.swing.JButton wd;
+    private javax.swing.JButton wdwd;
     // End of variables declaration//GEN-END:variables
 }

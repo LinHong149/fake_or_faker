@@ -1,0 +1,14 @@
+Question: False Context involves using accurate facts but combining them with inaccurate or unrelated information to create a misleading narrative. Result: Wrong Score: 0 Streak: 0
+Question: Out of context quotations can mislead the reader by presenting information in a way that was not intended by the original speaker. Result: Correct Score: 1 Streak: 1
+Question: Error in news reporting refers to intentional misinformation spread by news agencies. Result: Wrong Score: 0 Streak: 1
+Question: False Connections involve headlines, visuals, or captions that accurately represent the content of an article. Result: Correct Score: 1 Streak: 1
+Question: Satire and Parody content is intended to harm and deceive readers by presenting fictional information as true. Result: Correct Score: 2 Streak: 2
+Question: Fabricated Content refers to information that is completely true but presented in a misleading way. Result: Wrong Score: 0 Streak: 2
+Question: Propaganda is often used to influence public opinion by managing attitudes, values, and knowledge, typically with a specific agenda. Result: Correct Score: 1 Streak: 2
+Question: Imposter Content can occur when a media outlet impersonates a legitimate source to distribute false or misleading information. Result: Correct Score: 2 Streak: 2
+Question: Video Editing is always done to make videos more engaging and does not cause any false impressions. Result: Correct Score: 3 Streak: 3
+Question: Error in news reporting refers to intentional misinformation spread by news agencies. Result: Correct Score: 4 Streak: 4
+Question: Error in news reporting refers to intentional misinformation spread by news agencies. Result: Correct Score: 5 Streak: 5
+Question: Propaganda is often used to influence public opinion by managing attitudes, values, and knowledge, typically with a specific agenda. Result: Correct Score: 6 Streak: 6
+Question: Fabricated Content refers to information that is completely true but presented in a misleading way. Result: Correct Score: 7 Streak: 7
+Question: Propaganda is often used to influence public opinion by managing attitudes, values, and knowledge, typically with a specific agenda. Result: Correct Score: 8 Streak: 8
